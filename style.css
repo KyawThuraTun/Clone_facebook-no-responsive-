@@ -1,0 +1,592 @@
+    @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+     :root {
+        --primary: #2d88ff;
+        --dark: #18191a;
+        --semi-dark: #242526;
+        --soft-dark: #3a3b3c;
+        --danger: #f02849;
+        --success: #45bd62;
+        --warning: #f7b928;
+        --text: #b7b9bd;
+        --text-light: #ffffff;
+    }
+    
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Source Sans Pro', sans-serif;
+        color: var(--text);
+    }
+    
+    body {
+        background-color: var(--dark);
+    }
+    
+    .navbar {
+        background-color: var(--semi-dark);
+        display: flex;
+    }
+    
+    .left {
+        width: 25%;
+    }
+    
+    .left-side {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .logo {
+        width: 40px;
+        margin-right: 10px;
+    }
+    
+    .search-box {
+        background-color: var(--soft-dark);
+        padding: 10px 15px;
+        border-radius: 100px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .search-box .feather-search {
+        padding-right: 10px;
+    }
+    
+    .search-input {
+        border: none;
+        background-color: var(--soft-dark);
+    }
+    
+    .search-input:focus {
+        outline: none;
+    }
+    /* Center */
+    
+    .center {
+        width: 50%;
+    }
+    
+    .center-box {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .center-link {
+        width: 100px;
+        padding: 15px;
+        margin: 0 5px;
+        border-top: 3px solid var(--semi-dark);
+        border-bottom: 3px solid var(--semi-dark);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        transition: 0.3s;
+    }
+    
+    .center-link:hover {
+        background-color: var(--soft-dark);
+        border-radius: 10px;
+    }
+    
+    .center-link.active {
+        border-bottom: 3px solid var(--primary);
+    }
+    
+    .center-link.active:hover {
+        background-color: var(--soft-dark);
+        border-radius: 0;
+    }
+    
+    .center-link.active .center-icon {
+        color: var(--primary);
+    }
+    
+    .center-icon {
+        font-size: 25px;
+    }
+    
+    .center-link .noti {
+        background-color: var(--danger);
+        padding: 3px 5px;
+        border-radius: 10px;
+        position: absolute;
+        top: 7px;
+        right: 27px;
+        font-size: 12px;
+        font-weight: 900;
+        color: var(--text-light)
+    }
+    /* Right */
+    
+    .right {
+        width: 25%;
+    }
+    
+    .right-box {
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .profile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        padding: 5px 15px;
+        border-radius: 15px;
+        transition: 0.5s;
+    }
+    
+    .profile:hover {
+        background-color: var(--soft-dark);
+    }
+    
+    .profile-photo {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    
+    .profile-text {
+        color: var(--text-light);
+        font-weight: bolder;
+    }
+    
+    .notification-box {
+        display: flex;
+    }
+    
+    .notification {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--soft-dark);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 5px;
+    }
+    /* Facebook Body */
+    
+    .fb-body {
+        display: flex;
+    }
+    
+    .newfeed {
+        width: 50%;
+        height: 100vh;
+        overflow: scroll;
+    }
+    
+    .newfeed::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .myday-list {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        position: relative;
+    }
+    
+    .myday {
+        width: 115px;
+        height: 200px;
+        overflow: hidden;
+        background-size: 200%;
+        background-position: center;
+        border-radius: 12px;
+        position: relative;
+        margin-top: 20px;
+        padding: 10px;
+    }
+    
+    .myday-owner {
+        width: 43px;
+        height: 43px;
+        background-color: var(--primary);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .myday-owner.first {
+        background-color: var(--semi-dark);
+    }
+    
+    .myday-owner .feather-plus {
+        width: 35px;
+        height: 35px;
+        background-color: black;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .myday-owner-image {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-position: center;
+        background-size: 100%;
+    }
+    
+    .myday-text {
+        position: absolute;
+        bottom: 10px;
+        left: 8px;
+        color: var(--text-light);
+        font-weight: bolder;
+    }
+    
+    .myday-scroll {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        background-color: var(--semi-dark);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        right: -10px;
+        top: 90px;
+    }
+    /* Facebook-addPost */
+    
+    .add-post {
+        margin-top: 20px;
+        background-color: var(--semi-dark);
+        border-radius: 20px;
+        padding: 10px 20px;
+    }
+    
+    .add-post-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .add-post-profile {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+        border-radius: 50%;
+    }
+    
+    .divider {
+        height: 1px;
+        width: 100%;
+        background-color: var(--soft-dark);
+        margin: 10px 0px;
+    }
+    
+    .add-post-textbox {
+        background-color: var(--soft-dark);
+        padding: 10px 15px;
+        border-radius: 100px;
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+    }
+    
+    .add-post-button {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .add-post-button div {
+        flex-grow: 1;
+        text-align: center;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    
+    .add-post-button div:hover {
+        background-color: var(--soft-dark);
+    }
+    
+    .add-post-button .video i {
+        margin-right: 5px;
+        color: var(--danger);
+    }
+    
+    .add-post-button .photo i {
+        margin-right: 5px;
+        color: var(--success);
+    }
+    
+    .add-post-button .emoji i {
+        margin-right: 5px;
+        color: var(--warning);
+    }
+    
+    .add-post-button span {
+        font-weight: bolder;
+    }
+    /* facebook post */
+    
+    .post-list {}
+    
+    .post {
+        margin-top: 20px;
+        background-color: var(--semi-dark);
+        border-radius: 20px;
+        /* padding: 10px 20px; */
+    }
+    
+    .post-head {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+    
+    .post-head1 {
+        display: flex;
+        align-items: center;
+    }
+    
+    .post-profile {}
+    
+    .post-profile-image {
+        width: 50px;
+        margin-right: 10px;
+        height: 50px;
+        border-radius: 50%;
+    }
+    
+    .post-profile-name {
+        color: var(--text-light);
+    }
+    
+    .profile-name {
+        text-decoration: none;
+    }
+    
+    .profile-date {
+        font-size: 10px;
+        color: var(--text);
+        margin-right: 5px;
+    }
+    
+    .profile-date i {
+        font-size: 10px;
+        color: var(--text);
+    }
+    
+    .post-head2 {
+        font-size: 35px;
+    }
+    
+    .post-text {
+        margin: 5px 0 10px 0;
+        padding: 0px 15px;
+    }
+    
+    .upload-photo {
+        width: 100%;
+        padding: 0;
+    }
+    
+    .post-photo {
+        width: 100%;
+        height: 500px;
+    }
+    
+    .post-react svg {
+        width: 20px;
+        height: 20px;
+        margin: 3px 5px;
+    }
+    
+    .react-button {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .react-button .like span {
+        color: var(--primary);
+    }
+    
+    .react-button div {
+        flex-grow: 1;
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .react-button div:hover {
+        background-color: var(--soft-dark);
+    }
+    
+    .react-button .like i {
+        margin-right: 5px;
+        color: var(--primary);
+    }
+    
+    .react-button .comment i {
+        margin-right: 5px;
+    }
+    
+    .react-button .share i {
+        margin-right: 5px;
+    }
+    
+    .react-button span {
+        font-weight: bolder;
+    }
+    
+    .write-comment {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+    }
+    
+    .comment-profile {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 5px;
+    }
+    
+    .write-comment-textbox {
+        flex-grow: 1;
+        justify-content: space-between;
+        font-weight: bolder;
+    }
+    
+    .write-comment-textbox span i {
+        margin-right: 5px;
+    }
+    
+    .comment-input {
+        color: var(--text-light);
+    }
+    /* left-side content */
+    
+    .Left-side {
+        width: 25%;
+        height: 100vh;
+        overflow: scroll;
+    }
+    
+    .Left-side::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .left-side-content {
+        width: 100%;
+    }
+    
+    .leftside-content:hover {
+        background-color: var(--soft-dark);
+    }
+    
+    .leftside-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        padding: 10px 15px;
+    }
+    
+    .leftside-photo {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    
+    .leftside-content-text {
+        flex-grow: 1;
+        color: var(--text-light);
+        font-weight: bolder;
+    }
+    
+    .seemore {
+        background-color: var(--soft-dark);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .seemore i {
+        font-weight: bolder;
+        color: var(--text-light);
+    }
+    
+    h3 {
+        padding: 0px 15px;
+        color: var(--text);
+    }
+    /* Chatbox */
+    
+    .chatbox {
+        width: 25%;
+        height: 100vh;
+        overflow: scroll;
+    }
+    
+    .chatbox::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .chat-box {
+        width: 100%;
+    }
+    
+    .chatbox-title {
+        padding: 10px 20px;
+    }
+    
+    .chatbox-sponsored {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 15px;
+    }
+    
+    .chatbox-sponsored:hover {
+        background-color: var(--soft-dark);
+    }
+    
+    .sponsored-photo {
+        width: 100px;
+        height: 50px;
+        border-radius: 10px;
+        margin-right: 10px;
+    }
+    
+    .chatbox-sponsored-text {
+        flex-grow: 1;
+        font-weight: bolder;
+    }
+    
+    .chatbox-sponsored-text h4 {
+        color: var(--text-light);
+    }
+    
+    .chatbox-sponsored-text span {
+        font-size: 10px;
+        color: var(--text);
+    }
+    
+    .gift {
+        width: 35px;
+        height: 35px;
+        margin-right: 10px;
+    }
+    
+    .birthday-text {
+        flex-grow: 1;
+    }
+    
+    .birthday-text span {
+        font-weight: bolder;
+        color: var(--text-light);
+    }
